@@ -18,7 +18,7 @@ app.use(bodyParser.urlencoded({ extended: true}));
 app.use(bodyParser.json());
 app.use(cors());
 
-//Sanitización de entradas para prevenir inyecciones de MongoDB
+//Sanitización de entradas para prevenir inyecciones NoSQL de MongoDB
 app.use((req, res, next) => {
     if (req.body) {
         Object.keys(req.body).forEach(key => {
