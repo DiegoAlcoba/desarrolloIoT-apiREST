@@ -8,7 +8,7 @@ const sensorRoutes = require('./routes/sensors.routes');
 const readingRoutes = require('./routes/readings.routes'); 
 
 var app = express();
-var port = 3000;
+var port = 9000;
 
 //Conexión con la base de datos
 connectDB();
