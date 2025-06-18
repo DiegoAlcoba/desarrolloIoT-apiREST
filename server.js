@@ -4,8 +4,9 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 
 const connectDB = require('./config/db');
-const sensorRoutes = require('./routes/sensors.routes');
+const sensorRoutes = require('./routes/auth.routes');
 const readingRoutes = require('./routes/readings.routes'); 
+const loginRoutes = require('./routes/login_register.routes')
 
 var app = express();
 var port = process.env.PORT;
@@ -44,6 +45,7 @@ app.use((req, res, next) => {
 //Rutas
 app.use('/sensors', sensorRoutes);
 app.use('/readings', readingRoutes);
+app.use('/user', loginRoutes);
 
 //Ruta de prueba
 app.get('/test', (req, res) => res.json({ msg: 'El API REST funciona!' }));
